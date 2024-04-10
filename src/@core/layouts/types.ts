@@ -5,6 +5,9 @@ export type ContentWidth = 'full' | 'boxed'
 
 export type ThemeColor = 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success'
 
+export type GitLabelColor = 'refactoring' | 'deploy' | 'issue' | 'feature' | 'up-to-date' | 'release' | 'hotfix'
+export type GitStatusColor = 'open' | 'closed'
+
 export type NavLink = {
   path?: string
   title: string

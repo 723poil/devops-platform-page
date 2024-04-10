@@ -1,6 +1,8 @@
 // ** Type Imports
-import { PaletteMode } from '@mui/material'
-import { ThemeColor } from '../../layouts/types'
+// @ts-ignore
+
+import {PaletteColor, PaletteColorOptions, PaletteMode} from '@mui/material'
+import {GitLabelColor, GitStatusColor, ThemeColor} from '../../layouts/types'
 
 const DefaultPalette = (mode: PaletteMode, themeColor: ThemeColor) => {
   // ** Vars
@@ -71,6 +73,54 @@ const DefaultPalette = (mode: PaletteMode, themeColor: ThemeColor) => {
       dark: '#139CE0',
       contrastText: '#FFF'
     },
+    refactoring: {
+      light: '#fef2c0',
+      main: '#fef2c0',
+      dark: '#fef2c0',
+      contrastText: '#FFF'
+    },
+    deploy: {
+      light: '#0A772F',
+      main: '#0A772F',
+      dark: '#0A772F',
+      contrastText: '#FFF'
+    },
+    release: {
+      light: '#5319E7',
+      main: '#5319E7',
+      dark: '#5319E7',
+      contrastText: '#FFF'
+    },
+    issue: {
+      light: '#D93F0B',
+      main: '#D93F0B',
+      dark: '#D93F0B',
+      contrastText: '#FFF'
+    },
+    feature: {
+      light: '#1D76DB',
+      main: '#1D76DB',
+      dark: '#1D76DB',
+      contrastText: '#FFF'
+    },
+    'up-to-date': {
+      light: '#FBCA04',
+      main: '#FBCA04',
+      dark: '#FBCA04',
+      contrastText: '#FFF'
+    },
+    open: {
+      light: '#0E8A16',
+      main: '#0E8A16',
+      dark: '#0E8A16',
+      contrastText: '#FFF'
+    },
+    closed: {
+      light: '#5319E7',
+      main: '#5319E7',
+      dark: '#5319E7',
+      contrastText: '#FFF'
+    },
     grey: {
       50: '#FAFAFA',
       100: '#F5F5F5',
@@ -105,6 +155,30 @@ const DefaultPalette = (mode: PaletteMode, themeColor: ThemeColor) => {
       disabledBackground: `rgba(${mainColor}, 0.18)`,
       focus: `rgba(${mainColor}, 0.12)`
     }
+  }
+}
+
+declare module "@mui/material/styles" {
+  interface Palette extends CustomPalette {}
+  interface PaletteOptions extends CustomPaletteOptions {}
+}
+
+type CustomPalette = {
+  [_ in GitLabelColor | GitStatusColor]: PaletteColor;
+}
+type CustomPaletteOptions = {
+  [_ in keyof CustomPalette]?: PaletteColorOptions;
+}
+
+declare module "@mui/material/Chip" {
+  interface ChipPropsColorOverrides {
+    'refactoring': true;
+    'deploy': true;
+    'issue': true;
+    'feature': true;
+    'up-to-date': true;
+    'release': true;
+    'hotfix': true;
   }
 }
 
