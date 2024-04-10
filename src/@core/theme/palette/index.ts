@@ -77,7 +77,7 @@ const DefaultPalette = (mode: PaletteMode, themeColor: ThemeColor) => {
       light: '#fef2c0',
       main: '#fef2c0',
       dark: '#fef2c0',
-      contrastText: '#FFF'
+      contrastText: '#000'
     },
     deploy: {
       light: '#0A772F',
