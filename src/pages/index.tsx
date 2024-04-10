@@ -21,6 +21,8 @@ import StatisticsCard from '../views/dashboard/StatisticsCard'
 import WeeklyOverview from '../views/dashboard/WeeklyOverview'
 import DepositWithdraw from '../views/dashboard/DepositWithdraw'
 import SalesByCountries from '../views/dashboard/SalesByCountries'
+import GrafanaBasic from "../views/dashboard/GrafanaBasic";
+import GitIssues from "../views/dashboard/GitIssues";
 
 const Dashboard = () => {
   return (
@@ -32,14 +34,17 @@ const Dashboard = () => {
         {/*<Grid item xs={12} md={8}>*/}
         {/*  <StatisticsCard />*/}
         {/*</Grid>*/}
-        <Grid item xs={12} md={6} lg={4}>
-          <WeeklyOverview />
-        </Grid>
+        {/*<Grid item xs={12} md={6} lg={4}>*/}
+        {/*  <WeeklyOverview />*/}
+        {/*</Grid>*/}
         {/*<Grid item xs={12} md={6} lg={4}>*/}
         {/*  <TotalEarning />*/}
         {/*</Grid>*/}
         <Grid item xs={12} md={12} lg={12}>
-          <iframe src="http://localhost:3000/d/adi87a80ntmv4d/pc-usage?orgId=1&refresh=1m&from=1712591537706&to=1712677937707&theme=light&kiosk" height="220" width="100%" />
+          <GrafanaBasic/>
+        </Grid>
+        <Grid item xs={12}>
+          <GitIssues/>
         </Grid>
         {/*<Grid item xs={12} md={6} lg={4}>*/}
         {/*  <Grid container spacing={6}>*/}
@@ -86,9 +91,9 @@ const Dashboard = () => {
         {/*<Grid item xs={12} md={12} lg={8}>*/}
         {/*  <DepositWithdraw />*/}
         {/*</Grid>*/}
-        <Grid item xs={12}>
-          <Table />
-        </Grid>
+        {/*<Grid item xs={12}>*/}
+        {/*  <Table />*/}
+        {/*</Grid>*/}
       </Grid>
     </ApexChartWrapper>
   )

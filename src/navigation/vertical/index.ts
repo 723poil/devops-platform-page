@@ -12,6 +12,7 @@ import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
 
 // ** Type import
 import { VerticalNavItemsType } from '../../@core/layouts/types'
+import {Monitor} from "mdi-material-ui";
 
 const navigation = (): VerticalNavItemsType => {
   return [
@@ -22,6 +23,11 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       sectionTitle: 'Server Status'
+    },
+    {
+      title: 'Grafana',
+      icon: Monitor,
+      path: '/grafana',
     },
     {
       title: 'Typography',
